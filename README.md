@@ -18,6 +18,9 @@ the Stan code. This package is fully compatible with the `R` packages
 
 ## About this fork
 
+All information below should be considered out of date. This document is
+not kept up to date. Henrik Singmann, April 2026.
+
 The original package was developed by [Donald R.
 Williams](https://github.com/donaldRwilliams/chkptstanr). However, the
 package has not been updated in 2 years, despite breaking issues. Donald
@@ -30,7 +33,7 @@ The current CRAN version (0.1.1) has several bugs, and until the next
 release, you can install the development version from GitHub:
 
 ``` r
-remotes::install_github("venpopov/chkptstanr")
+remotes::install_github("singmann/chkptstanr")
 ```
 
 These packages are needed.

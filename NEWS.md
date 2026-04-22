@@ -1,3 +1,7 @@
+# chkptstanr 0.3.0
+
+Revived this package to use on HPC infrastructure with limited wall time. Disabled the iter_warmup argument.
+
 # chkptstanr 0.2.0
 
 This is the first release of the package under the new maintainer, Ven Popov. The package has been significantly updated and improved. The major bugs have been fixed, and new features have been added. The package is now fully compatible with the latest versions of `brms` and `cmdstanr`. The package now works as expected; however, due to issue #10, I do not recommend using it for any production work. This release is meant to capture the current state of the package after the major bugs have been fixed. The next update will correct the adaptation procedure as described in issue #10, but this will require a major rewrite of the package. The current Development Roadmap is available [here](https://github.com/venpopov/chkptstanr/issues/1).
