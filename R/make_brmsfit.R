@@ -43,7 +43,9 @@ read_stan_csv_multiple <- function(files, idpattern='output_[0-9]+_') {
   ids <- unique(stringr::str_extract(files,idpattern))
   for (i in ids) {
     fit_files <- files[grepl(i, files)]
-    fits[[i]] <- rstan::read_stan_csv(fit_files)
+    #fits[[i]] <- rstan::read_stan_csv(fit_files)
+    #fits[[i]] <- cmdstanr::read_cmdstan_csv(fit_files)
+    fits[[i]] <- brms::read_csv_as_stanfit(fit_files)
     attr(fits[[i]],'checkpoint_phase') <- 
       unique(stringr::str_extract(fit_files,'warmup|sample'))
   }
