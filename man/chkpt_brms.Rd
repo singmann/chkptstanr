@@ -7,10 +7,9 @@
 chkpt_brms(
   formula,
   data,
-  iter_adaptation = 150,
-  iter_warmup = 1000,
+  iter_adaptation = 500,
   iter_sampling = 1000,
-  iter_per_chkpt = 100,
+  iter_per_chkpt = 500,
   parallel_chains = 4,
   threads_per = 1,
   chkpt_progress = TRUE,
@@ -35,13 +34,8 @@ initial warmup, which are used for the adaptation of the step size and
 inverse mass matrix. This is equivalent to the traditional warmup stage.
 Checkpointing will begin only after this stage is complete.}
 
-\item{iter_warmup}{(positive integer) The number of warmup iterations to run
-per chain after the adaptation stage (defaults to 1000). During this stage
-the step size and inverse mass matrix are fixed to the values found during
-the adaptation stage. There is no further adaptation performed.}
-
 \item{iter_sampling}{(positive integer) The number of post-warmup iterations
-to run per chain (defaults to 1000).}
+to run per chain.}
 
 \item{iter_per_chkpt}{(positive integer). The number of iterations per
 checkpoint. Note that \code{iter_sampling} is divided by

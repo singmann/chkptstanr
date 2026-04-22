@@ -15,13 +15,8 @@
 #'   inverse mass matrix. This is equivalent to the traditional warmup stage.
 #'   Checkpointing will begin only after this stage is complete.
 #'
-#' @param iter_warmup (positive integer) The number of warmup iterations to run
-#'   per chain after the adaptation stage (defaults to 1000). During this stage
-#'   the step size and inverse mass matrix are fixed to the values found during
-#'   the adaptation stage. There is no further adaptation performed.
-#'
 #' @param iter_sampling (positive integer) The number of post-warmup iterations
-#'   to run per chain (defaults to 1000).
+#'   to run per chain.
 #'
 #' @param iter_per_chkpt (positive integer). The number of iterations per
 #'   checkpoint. Note that \code{iter_sampling} is divided by
@@ -163,10 +158,9 @@
 #' }
 chkpt_brms <- function(formula,
                        data,
-                       iter_adaptation = 150,
-                       iter_warmup = 1000,
+                       iter_adaptation = 500,
                        iter_sampling = 1000,
-                       iter_per_chkpt = 100,
+                       iter_per_chkpt = 500,
                        parallel_chains = 4,
                        threads_per = 1,
                        chkpt_progress = TRUE,
@@ -177,6 +171,7 @@ chkpt_brms <- function(formula,
                        path,
                        ...) {
   # TODO: MASSIVElY SIMPLIFY AND REFACTOR ALL CODE BELOW AFTER THE HOTFIX IS OUT
+  iter_warmup = iter_adaptation
   stan_phase = ""
   args <- c(as.list(environment()), list(...))
   if (!is.null(args$iter_typical)) {
