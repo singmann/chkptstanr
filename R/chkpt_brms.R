@@ -41,6 +41,8 @@
 #'   It defaults to NULL so all the default values are used. For a comprehensive
 #'   overview see \code{\link[rstan]{stan}}.
 #'
+#' @param init same as in \code{\link[brms]{brm}}
+#'
 #' @param seed (positive integer). The seed for random number generation to make
 #'   results reproducible.
 #'
@@ -165,6 +167,7 @@ chkpt_brms <- function(formula,
                        threads_per = 1,
                        chkpt_progress = TRUE,
                        control = NULL,
+                       init = NULL,
                        seed = 1,
                        stop_after = NULL,
                        reset = FALSE,
@@ -284,7 +287,8 @@ chkpt_brms <- function(formula,
       model = stan_m3$sample,
       iter_adaptation = iter_adaptation,
       cmd_args = cmd_args,
-      progress = chkpt_progress
+      progress = chkpt_progress,
+      init = init
     )
 
     stan_state <- extract_stan_state(sample_chunk, "warmup")

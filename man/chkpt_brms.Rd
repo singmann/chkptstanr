@@ -14,6 +14,7 @@ chkpt_brms(
   threads_per = 1,
   chkpt_progress = TRUE,
   control = NULL,
+  init = NULL,
   seed = 1,
   stop_after = NULL,
   reset = FALSE,
@@ -59,6 +60,8 @@ actually keep track of checkpointing progress)}
 \item{control}{A named list of parameters to control the sampler's behavior.
 It defaults to NULL so all the default values are used. For a comprehensive
 overview see \code{\link[rstan]{stan}}.}
+
+\item{init}{same as in \code{\link[brms]{brm}}}
 
 \item{seed}{(positive integer). The seed for random number generation to make
 results reproducible.}

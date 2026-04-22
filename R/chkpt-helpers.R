@@ -63,12 +63,14 @@ chkpt_typical <- function(model,
                           control,
                           iter_adaptation,
                           seed,
-                          progress) {
+                          progress,
+                          init) {
   
   cmd_args$iter_sampling <- 0
   cmd_args$seed <- seed
   cmd_args$save_warmup <- TRUE
   cmd_args$iter_warmup <- iter_adaptation
+  cmd_args$init <- init
   
   if (progress) {
     capture_output <- capture.output({
@@ -134,7 +136,7 @@ cp_cmd_args <- function(seed,
     adapt_engaged = FALSE,
     init = stan_state$inits,
     inv_metric = stan_state$inv_metric,
-    step_size = stan_state$step_size_adapt,
+    step_size = stan_state$step_size_adapt, 
     output_dir = paste0(path, "/cmd_output"),
     output_basename = paste0("output_", 
                              stringr::str_pad(checkpoint, 

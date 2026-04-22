@@ -65,9 +65,8 @@ if need be, while not loosing any of the progress.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/venpopov/chkptstanr}
-  \item \url{https://venpopov.github.io/chkptstanr/}
-  \item Report bugs at \url{https://github.com/venpopov/chkptstanr/issues}
+  \item \url{https://github.com/singmann/chkptstanr}
+  \item Report bugs at \url{https://github.com/singmann/chkptstanr/issues}
 }
 
 }
@@ -78,6 +77,7 @@ Authors:
 \itemize{
   \item Donald Williams \email{donald.williams@nwea.org}
   \item Tyler Matta \email{tyler.matta@nwea.org}
+  \item Henrik Singmann \email{singmann@gmail.com}
 }
 
 Other contributors:
